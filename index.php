@@ -5,10 +5,7 @@ $data_json = file_get_contents($filename);
  $bargraph_height = (161+($data->temperature*4));
  $bargraph_top = (315-($data->temperature*4));
  
- echo "La température à été changée le : ".date ("d/m/Y"." à "."H:i:s.", filemtime($filename));
-
-
-
+ 
  ?>
 <html>
 <head>
@@ -19,6 +16,7 @@ $data_json = file_get_contents($filename);
 <body>
 	<h1>Températures</h1>
 	 <p>Il fait <?php echo $data->temperature ; ?>°C avec <?php echo $data->humidite ; ?>% d'humidité.</p></br>
+	 <?php echo "Le ".date ("d/m/Y"." à "."H:i:s.", filemtime($filename)); ?>
 
 
 <div id="thermometer">
