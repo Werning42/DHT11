@@ -1,6 +1,14 @@
 <?php $filename = "data.txt" ; 
 $data_json = file_get_contents($filename);
  $data = json_decode($data_json); 
+
+ $bargraph_height = (161+($data->temperature*4));
+ $bargraph_top = (315-($data->temperature*4));
+ 
+ echo "La température à été changée le : ".date ("d/m/Y"." à "."H:i:s.", filemtime($filename));
+
+
+
  ?>
 <html>
 <head>
@@ -14,8 +22,15 @@ $data_json = file_get_contents($filename);
 
 
 <div id="thermometer">
-  <div id="bargraph"></div>
+  <div id="bargraph">
+  </div>
 </div>
 </body>
 </html>
+<style>
+	#bargraph{
+		height: <?php echo $bargraph_height."px" ?>;
+		top: <?php echo $bargraph_top."px" ?>;
+	}
+</style>
 
