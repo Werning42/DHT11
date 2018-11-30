@@ -1,10 +1,10 @@
 <?php
 
-echo('Hello World');
 
 ?>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="main.css">
 	<meta charset="utf-8">
 	<title>Thermomètre</title>
 </head>
