@@ -1,4 +1,4 @@
-<?php $filename = "data.txt" ; 
+<?php $filename = "data.json" ; 
 $data_json = file_get_contents($filename);
  $data = json_decode($data_json); 
 
@@ -9,6 +9,7 @@ $data_json = file_get_contents($filename);
  ?>
 <html>
 <head>
+	<meta http-equiv="refresh" content="1">
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<meta charset="utf-8">
 	<title>Thermomètre</title>
