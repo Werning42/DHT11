@@ -1,9 +1,11 @@
 <?php
 
-	$data_json = file_get_contents("php://input");
-	$temperature_file = ("data.json");
+require 'model/Mesure.php';
+$Mesure = new Mesure();
 
+	$data_json = file_get_contents("php://input");
 	$data = json_decode($data_json);
+
 	if (! $data){
 		http_response_code(415);
 		exit();
@@ -16,6 +18,9 @@
 	$op = file_put_contents($temperature_file, $data_json) ;
 	if (! $op){
 		http_response_code(500);
+	} else{
+		$temp = $data->temperature;
+		$humi = $data->humidite;
+		$Mesure->sendData($humi,$temp);
 	}
 	
-?>
