@@ -23,8 +23,8 @@ class Mesure extends DbManager{
     protected function sendData()
     {
         $pdo = $this->dbConnect();
-        $req = $pdo->prepare('INSERT INTO Da (humi, temp) VALUES (:humi, :temp)');
-        $req->execute(array(':humi' => $humidite, ':temp' => $temperature));
+        $req = $pdo->prepare('INSERT INTO Data (humidité, température) VALUES (:humidité, :température)');
+        $req->execute(array(':humidité' => $humidite, ':température' => $temperature));
     }
     
     public function getId(){
