@@ -1,0 +1,11 @@
+{
+	"autoload" : {
+		"psr-4" : {
+			"Dht11\\DHT11\\" : "src"
+		}
+	},
+	"name" : "dht11/DHT11",
+	"require" : {
+		"php" : ">=7.0"
+	}
+}

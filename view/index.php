@@ -1,6 +1,8 @@
-<?php $filename = "data.json" ; 
+<?php 
+require '../model/Dbconnect.php';
+$filename = "data.json" ; 
 $data_json = file_get_contents($filename);
- $data = json_decode($data_json); 
+$data = json_decode($data_json); 
 
  $bargraph_height = (161+($data->temperature*4));
  $bargraph_top = (315-($data->temperature*4));
@@ -9,14 +11,14 @@ $data_json = file_get_contents($filename);
  ?>
 <html>
 <head>
-	<meta http-equiv="refresh" content="1">
+	<!--<meta http-equiv="refresh" content="1">-->
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<meta charset="utf-8">
 	<title>Thermomètre</title>
 </head>
 <body>
 	<h1>Températures</h1>
-	 <p>Il fait <?php echo $data->temperature ; ?>°C avec <?php echo $data->humidite ; ?>% d'humidité.</p></br>
+		 <p>Il fait <?php echo $data->temperature ; ?>°C avec <?php echo $data->humidite ; ?>% d'humidité.</p></br>
 	 <?php echo "Le ".date ("d/m/Y"." à "."H:i:s.", filemtime($filename)); ?>
 
 
